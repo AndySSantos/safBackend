@@ -1,0 +1,14 @@
+fastapi-code-generator
+numpy
+pandas
+matplotlib
+jupyter
+pillow
+opencv-python
+scikit-learn
+fastapi
+uvicorn
+pymongo
+motor
+mongoengine
+pydantic
