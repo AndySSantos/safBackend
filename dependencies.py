@@ -8,7 +8,7 @@ from typing import Union
 
 from fastapi import Path
 
-from .models import (
+from models import (
     AccessTurnstileTurnstileIdUserUserIdPostRequest,
     AccessTurnstileTurnstileIdUserUserIdPostResponse,
     AccessTurnstileTurnstileIdUserUserIdPostResponse1,

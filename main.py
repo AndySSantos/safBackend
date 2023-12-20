@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 
-from .routers import access, turnstile, user
+from routers import access, turnstile, user
 
 app = FastAPI(
     title='safuamiAPI',

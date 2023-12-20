@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter
 
-from ..dependencies import *
+from dependencies import *
 
 router = APIRouter(tags=['access'])
 
