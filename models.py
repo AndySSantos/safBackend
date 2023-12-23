@@ -132,3 +132,15 @@ class ElectronicTurnstiles(BaseModel):
     turnstiles: List[Turnstile] = Field(
         ..., description='All Electronics turnstiles with facial authentication enabled'
     )
+
+
+class User(BaseModel):
+    id: Optional[str] = None
+    name: str = Field(...,description='name user')
+    email: constr(regex=r'^[a-zA-Z0-9._%+-]+@(titlani|xanum|izt)\.uam\.mx$') = Field(..., description='email user account')
+    hashPasssword: str = Field(...,description= 'password encrypt of user')
+    saltPassword: Optional[str] = Field(None, description='salt code encrypt password')
+    emailVerified: Optional[bool] = Field(False, description="Set to true if the user's email has been verified.") 
+    codeVerification: Optional[str] = Field(None,description="Code send email account user")
+    faceCaptured: Optional[bool] = Field(False,description='exist a registry facial')
+    lastUpgradeFace: Optional[date] = Field(None, description='last update facial registry')

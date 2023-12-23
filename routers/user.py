@@ -8,6 +8,11 @@ from fastapi import APIRouter
 
 from dependencies import *
 
+from schemas.user import *
+
+from config.database import data_base
+import uuid
+
 router = APIRouter(tags=['user'])
 
 
@@ -42,11 +47,14 @@ def post_login(body: Credentials = None) -> Union[TokenSession, Error]:
     responses={'400': {'model': Error}},
     tags=['user'],
 )
-def post_user(body: Credentials = None) -> Union[TokenSession, Error]:
+async def post_user(body: Credentials = None) -> Union[TokenSession, Error]:
     """
     User registration
     """
-    pass
+    new_user = dict(body)
+    print(new_user)
+    
+    return TokenSession(token=uuid.uuid4(),userId="b8c38n45n4w")
 
 
 @router.get(
@@ -194,3 +202,8 @@ def post_users_user_id_verify_code_confirmation(
     Verication email
     """
     pass
+
+
+@router.get('/users')
+def get_users():
+    return usersEntity(data_base.user.find())
