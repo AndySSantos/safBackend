@@ -1,4 +1,5 @@
 fastapi-code-generator
+fastapi
 python-multipart
 numpy
 pandas
