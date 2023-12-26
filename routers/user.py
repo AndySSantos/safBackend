@@ -114,16 +114,14 @@ def patch_users_userId(
     },
     tags=['user'],
 )
-async def put_users_userId(
+async def update_profile(
     userId: str = Path(..., alias='userId'), body: ProfileUpdate = None
 ) -> Union[Profile, Error]:
     """
     Update a user
     """
-    #body['userId'] = userId
     return update_info_by_block(body,userId)
-    #print(userId)
-    #return Error(message="erro",code=401)
+
 
 
 @router.get(
@@ -194,7 +192,7 @@ def send_code(
     },
     tags=['user'],
 )
-def post_users_userId_verify_code_confirmation(
+def verify_code_confirmation(
     userId: str = Path(..., alias='userId'), body: CodeVerification = None
 ) -> Union[None, Error]:
     """

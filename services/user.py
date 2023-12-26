@@ -238,7 +238,7 @@ def send_code_verification(userId: str) -> Union[None, Error]:
     username = user_repository["name"]
     
     
-    email_body = f"""\
+    email_body = f"""
     Hola {username},
 
     Gracias por registrarte en SafUAMI. Para completar tu registro, utiliza el siguiente codigo de verificacion:
@@ -254,32 +254,34 @@ def send_code_verification(userId: str) -> Union[None, Error]:
     
     msg = Email(
         to=user_repository["email"],
-        subject="SafUAMI verefication email",
+        subject="Verification code",
         body=email_body
     )
     
-    
-    message = MIMEText(msg.body,"html")
+    message = MIMEText(msg.body, "html")
     message["From"] = USERNAME
     message["To"] = msg.to#",".join(msg.to)
     message["Subject"] = msg.subject
     
-    ctx = create_default_context()
-    
     try:
-        with SMTP(HOST,PORT) as server:
-            server.ehlo()
-            server.starttls(context=ctx)
-            server.ehlo()
-            server.login(USERNAME, PASSWORD)
-            server.send_message(message)
-            server.quit()
-        return Error(
-            message=f"Envio a {msg.to} exitoso",
-            code=204
-        )
-    except Exception:
-        return Error(message="error servidor",code=500)
+        smtp = SMTP(HOST,PORT)
+        status_code, response = smtp.ehlo()
+        print(f"[*] Echoing the server: {status_code} {response}")
+        
+        status_code, response = smtp.starttls()
+        print(f"[*] Starting TLS connection: {status_code} {response}")
+        
+        status_code, response = smtp.login(USERNAME,PASSWORD)
+        print(f"[*] Logging in: {status_code} {response}")
+        
+        smtp.send_message(message)
+        #smtp.sendmail(from_addr=USERNAME,to_addrs=user_repository["email"],msg=email_body)
+        
+        #smtp.quit()
+        print("enviado")
+        return Error(message=f"Codigo enviado a {msg.to}", code=204)
+    except Exception as e:
+        return Error(message=f"error servidor: {e}",code=500)
 
 
 def verification_code(userId: str, code: CodeVerification) -> Union[None, Error]:
@@ -315,7 +317,7 @@ def verification_code(userId: str, code: CodeVerification) -> Union[None, Error]
     
     #3 
     code_verification = dict(code)
-    if user_repository["codeVerification"] != code_verification["code"]:
+    if user_repository["codeVerification"] != code_verification["code"] or user_repository["emailVerified"]:
         return Error(
             message="Usuario no autorizado",
             code=401
