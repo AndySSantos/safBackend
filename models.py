@@ -144,3 +144,10 @@ class User(BaseModel):
     codeVerification: Optional[str] = Field(None,description="Code send email account user")
     faceCaptured: Optional[bool] = Field(False,description='exist a registry facial')
     lastUpgradeFace: Optional[date] = Field(None, description='last update facial registry')
+    
+    
+class Email(BaseModel):
+    to: str = Field(..., description="To whom the email will be sent")
+    subject: str = Field(...,description="Subject related to email")
+    body: str = Field(..., description="Context email")
+    

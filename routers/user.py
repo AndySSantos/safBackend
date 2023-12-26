@@ -4,7 +4,7 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, BackgroundTasks
 
 from dependencies import *
 
@@ -40,7 +40,7 @@ async def post_login(body: Credentials = None) -> Union[TokenSession, Error]:
 
 @router.post(
     '/users',
-    response_model=TokenSession,
+    response_model=Union[TokenSession, Error],
     responses={'400': {'model': Error}},
     tags=['user'],
 )
@@ -164,7 +164,7 @@ def post_users_userId_pictures(
 
 @router.post(
     '/users/{userId}/sendConfirmationCode',
-    response_model=None,
+    response_model=Union[None,Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -172,13 +172,15 @@ def post_users_userId_pictures(
     },
     tags=['user'],
 )
-def post_users_userId_send_confirmation_code(
+def send_code(
     userId: str = Path(..., alias='userId')
 ) -> Union[None, Error]:
     """
     Send code confirmation email
     """
-    pass
+    #task = BackgroundTasks()
+    #task.add_task(func=send_code_verification(userId))
+    return send_code_verification(userId)#{"status":204,"body":"No content"}
 
 
 @router.post(
@@ -198,7 +200,7 @@ def post_users_userId_verify_code_confirmation(
     """
     Verication email
     """
-    pass
+    return verification_code(userId, body)
 
 
 @router.get('/users')

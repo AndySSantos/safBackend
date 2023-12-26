@@ -24,5 +24,6 @@ from models import (
     TokenSession,
     Turnstile,
     TurnstileUpdate,
-    User
+    User,
+    Email
 )

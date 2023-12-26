@@ -6,6 +6,10 @@ from schemas.user import *
 
 from config.database import data_base
 from config.security import *
+from ssl import create_default_context
+from email.mime.text import MIMEText
+from smtplib import SMTP
+import smtplib
 
 from bson.objectid import ObjectId
 
@@ -38,6 +42,14 @@ def create_user(credentials: Credentials) -> Union[TokenSession, Error]:
         )
         
     new_user = dict(credentials)
+    
+    user_repository = COLLECTION.find_one(filter={"email":new_user["email"]})
+    
+    if user_repository:
+        return Error(
+            message="Correo exitente", 
+            code=403
+        )
     
     if new_user["email"]=="" or new_user["password"]=="":
         return Error(
@@ -194,14 +206,122 @@ def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, 
     )
  
     
-async def send_code_verification():
-    pass
+def send_code_verification(userId: str) -> Union[None, Error]:
+    """Business rules:
+        1.- User id is not empty 2.
+        2.- User exists in the repository 2.
+        3.- The user does not have verified email address
+        4.- The code is 8 characters long.
+        5.- The code can be resent as long as point 3 is fulfilled.
 
-async def verification_code():
-    pass
+    Args:
+        userId (str): _description_
+
+    Returns:
+        Union[None, Error]: _description_
+    """
+    
+    #1 
+    if userId is None or userId=="":
+        return Error(message="Forbidden", code=403)
+    
+    #2 y 3
+    userId = ObjectId(userId)
+    user_repository = COLLECTION.find_one(filter={"_id": userId})
+    if user_repository is None or  user_repository["emailVerified"]:
+        return Error(message="Usuario no autorizado a esta accion", code=401)
+    
+    #4
+    verification_code = generator_code()
+    COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"codeVerification":verification_code}})
+    
+    username = user_repository["name"]
+    
+    
+    email_body = f"""\
+    Hola {username},
+
+    Gracias por registrarte en SafUAMI. Para completar tu registro, utiliza el siguiente codigo de verificacion:
+    
+    Codigo de verificacion: {verification_code}
+    
+    Este codigo de verificacion no caducara, pero puedes solicitar otro desde la app
+     
+    ¡Gracias!
+    SafUAMI by SoftMinds
+    """ 
+    
+    
+    msg = Email(
+        to=user_repository["email"],
+        subject="SafUAMI verefication email",
+        body=email_body
+    )
+    
+    
+    message = MIMEText(msg.body,"html")
+    message["From"] = USERNAME
+    message["To"] = msg.to#",".join(msg.to)
+    message["Subject"] = msg.subject
+    
+    ctx = create_default_context()
+    
+    try:
+        with SMTP(HOST,PORT) as server:
+            server.ehlo()
+            server.starttls(context=ctx)
+            server.ehlo()
+            server.login(USERNAME, PASSWORD)
+            server.send_message(message)
+            server.quit()
+        return Error(
+            message=f"Envio a {msg.to} exitoso",
+            code=204
+        )
+    except Exception:
+        return Error(message="error servidor",code=500)
 
 
+def verification_code(userId: str, code: CodeVerification) -> Union[None, Error]:
+    """Business rules:
+            1.- User and code received not empty.
+            2.- User exists in the system repository.
+            3.- The code is the same as the one sent to the user.
+            4.- User account is activated
+
+    Args:
+        userId (str): _description_
+        code (CodeVerification): _description_
+
+    Returns:
+        Union[None, Error]: _description_
+    """
+    #1
+    if code is None or userId is None or userId=="":
+        return Error(
+            message="Forbidden",
+            code=403
+        )
     
+    #2
+    userId = ObjectId(userId)
+    user_repository = COLLECTION.find_one(filter={"_id": userId})
     
+    if not user_repository: 
+        return Error(
+            message="Usuario no encontrado",
+            code=404
+        )
     
+    #3 
+    code_verification = dict(code)
+    if user_repository["codeVerification"] != code_verification["code"]:
+        return Error(
+            message="Usuario no autorizado",
+            code=401
+        )
     
+    #4
+    COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"emailVerified":True}})
+    return None  # Verificacion exitosa
+
