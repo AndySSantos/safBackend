@@ -8,10 +8,7 @@ from fastapi import APIRouter
 
 from dependencies import *
 
-from schemas.user import *
-
-from config.database import data_base
-import uuid
+from services.user import *
 
 router = APIRouter(tags=['user'])
 
@@ -26,7 +23,7 @@ def post_forgot_password(body: ForgotPassword = None) -> None:
 
 @router.post(
     '/login',
-    response_model=TokenSession,
+    response_model=Union[TokenSession, Error],
     responses={
         '400': {'model': Error},
         '404': {'model': Error},
@@ -34,11 +31,11 @@ def post_forgot_password(body: ForgotPassword = None) -> None:
     },
     tags=['user'],
 )
-def post_login(body: Credentials = None) -> Union[TokenSession, Error]:
+async def post_login(body: Credentials = None) -> Union[TokenSession, Error]:
     """
     Login
     """
-    pass
+    return login(body)
 
 
 @router.post(
@@ -47,18 +44,15 @@ def post_login(body: Credentials = None) -> Union[TokenSession, Error]:
     responses={'400': {'model': Error}},
     tags=['user'],
 )
-async def post_user(body: Credentials = None) -> Union[TokenSession, Error]:
+async def create_account(body: Credentials = None) -> Union[TokenSession, Error]:
     """
     User registration
     """
-    new_user = dict(body)
-    print(new_user)
-    
-    return TokenSession(token=uuid.uuid4(),userId="b8c38n45n4w")
+    return create_user(body)
 
 
 @router.get(
-    '/users/{user_id}',
+    '/users/{userId}',
     response_model=Profile,
     responses={
         '401': {'model': Error},
@@ -67,8 +61,8 @@ async def post_user(body: Credentials = None) -> Union[TokenSession, Error]:
     },
     tags=['user'],
 )
-def get_users_user_id(
-    user_id: int = Path(..., alias='userId')
+def get_users_userId(
+    userId: str = Path(..., alias='userId')
 ) -> Union[Profile, Error]:
     """
     Recover user
@@ -77,13 +71,13 @@ def get_users_user_id(
 
 
 @router.delete(
-    '/users/{user_id}',
+    '/users/{userId}',
     response_model=None,
     responses={'400': {'model': Error}, '404': {'model': Error}},
     tags=['user'],
 )
-def delete_users_user_id(
-    user_id: int = Path(..., alias='userId')
+def delete_users_userId(
+    userId: str = Path(..., alias='userId')
 ) -> Union[None, Error]:
     """
     Delete account
@@ -92,7 +86,7 @@ def delete_users_user_id(
 
 
 @router.patch(
-    '/users/{user_id}',
+    '/users/{userId}',
     response_model=Profile,
     responses={
         '401': {'model': Error},
@@ -101,8 +95,8 @@ def delete_users_user_id(
     },
     tags=['user'],
 )
-def patch_users_user_id(
-    user_id: int = Path(..., alias='userId'), body: ProfileUpdate = None
+def patch_users_userId(
+    userId: str = Path(..., alias='userId'), body: ProfileUpdate = None
 ) -> Union[Profile, Error]:
     """
     Modify a User
@@ -111,8 +105,8 @@ def patch_users_user_id(
 
 
 @router.put(
-    '/users/{user_id}',
-    response_model=Profile,
+    '/users/{userId}',
+    response_model=Union[Profile, Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -120,23 +114,26 @@ def patch_users_user_id(
     },
     tags=['user'],
 )
-def put_users_user_id(
-    user_id: int = Path(..., alias='userId'), body: ProfileUpdate = None
+async def put_users_userId(
+    userId: str = Path(..., alias='userId'), body: ProfileUpdate = None
 ) -> Union[Profile, Error]:
     """
     Update a user
     """
-    pass
+    #body['userId'] = userId
+    return update_info_by_block(body,userId)
+    #print(userId)
+    #return Error(message="erro",code=401)
 
 
 @router.get(
-    '/users/{user_id}/pictures',
+    '/users/{userId}/pictures',
     response_model=FaceRegitry,
     responses={'404': {'model': Error}},
     tags=['user'],
 )
-def get_users_user_id_pictures(
-    user_id: int = Path(..., alias='userId')
+def get_users_userId_pictures(
+    userId: str = Path(..., alias='userId')
 ) -> Union[FaceRegitry, Error]:
     """
     Existence of facial register
@@ -145,7 +142,7 @@ def get_users_user_id_pictures(
 
 
 @router.post(
-    '/users/{user_id}/pictures',
+    '/users/{userId}/pictures',
     response_model=None,
     responses={
         '201': {'model': FaceRegitry},
@@ -156,8 +153,8 @@ def get_users_user_id_pictures(
     },
     tags=['user'],
 )
-def post_users_user_id_pictures(
-    user_id: int = Path(..., alias='userId'), body: SavePictures = None
+def post_users_userId_pictures(
+    userId: str = Path(..., alias='userId'), body: SavePictures = None
 ) -> Union[None, FaceRegitry, Error]:
     """
     Facial registration request
@@ -166,7 +163,7 @@ def post_users_user_id_pictures(
 
 
 @router.post(
-    '/users/{user_id}/sendConfirmationCode',
+    '/users/{userId}/sendConfirmationCode',
     response_model=None,
     responses={
         '401': {'model': Error},
@@ -175,8 +172,8 @@ def post_users_user_id_pictures(
     },
     tags=['user'],
 )
-def post_users_user_id_send_confirmation_code(
-    user_id: int = Path(..., alias='userId')
+def post_users_userId_send_confirmation_code(
+    userId: str = Path(..., alias='userId')
 ) -> Union[None, Error]:
     """
     Send code confirmation email
@@ -185,7 +182,7 @@ def post_users_user_id_send_confirmation_code(
 
 
 @router.post(
-    '/users/{user_id}/verifyCodeConfirmation',
+    '/users/{userId}/verifyCodeConfirmation',
     response_model=None,
     responses={
         '400': {'model': Error},
@@ -195,8 +192,8 @@ def post_users_user_id_send_confirmation_code(
     },
     tags=['user'],
 )
-def post_users_user_id_verify_code_confirmation(
-    user_id: int = Path(..., alias='userId'), body: CodeVerification = None
+def post_users_userId_verify_code_confirmation(
+    userId: str = Path(..., alias='userId'), body: CodeVerification = None
 ) -> Union[None, Error]:
     """
     Verication email
@@ -206,4 +203,5 @@ def post_users_user_id_verify_code_confirmation(
 
 @router.get('/users')
 def get_users():
-    return usersEntity(data_base.user.find())
+    #return usersEntity(data_base.user.find())
+    return "users"

@@ -13,17 +13,17 @@ from pydantic import BaseModel, EmailStr, Field, constr
 
 
 class Profile(BaseModel):
-    userId: str = Field(..., description='Unique identifier for the given user.')
+    userId: Optional[str] = Field(None, description='Unique identifier for the given user.')
     user: str = Field(..., description='name user')
     email: EmailStr = Field(..., description='email account')
     emailVerified: bool = Field(
         ..., description="Set to true if the user's email has been verified."
     )
-    lastUpgradeFace: date = Field(..., description='date last upgrade face registry')
+    lastUpgradeFace: Optional[date] = Field(None, description='date last upgrade face registry')
 
 
 class Error(BaseModel):
-    menssage: str = Field(
+    message: str = Field(
         ...,
         description='Mensaje amigable que describe el error',
         examples=['User not found'],
@@ -34,7 +34,7 @@ class Error(BaseModel):
 
 
 class ProfileUpdate(BaseModel):
-    userId: str = Field(..., description='id user account')
+    userId: Optional[str] = Field(None, description='id user account')
     currentPassword: str = Field(..., description='cuttently password')
     newPassword: Optional[str] = Field(None, description='new password for account')
     newUser: Optional[str] = Field(None, description='new username')
@@ -135,10 +135,10 @@ class ElectronicTurnstiles(BaseModel):
 
 
 class User(BaseModel):
-    id: Optional[str] = None
+    #id: Optional[str] = None
     name: str = Field(...,description='name user')
     email: constr(regex=r'^[a-zA-Z0-9._%+-]+@(titlani|xanum|izt)\.uam\.mx$') = Field(..., description='email user account')
-    hashPasssword: str = Field(...,description= 'password encrypt of user')
+    hashPassword: str = Field(...,description= 'password encrypt of user')
     saltPassword: Optional[str] = Field(None, description='salt code encrypt password')
     emailVerified: Optional[bool] = Field(False, description="Set to true if the user's email has been verified.") 
     codeVerification: Optional[str] = Field(None,description="Code send email account user")
