@@ -76,8 +76,8 @@ def create_user(credentials: Credentials) -> Union[TokenSession, Error]:
     
     # create in database
     result = COLLECTION.insert_one(dict(new_account))
-    
-    return TokenSession(token=uuid.uuid4(),userId=str(result.inserted_id))
+    token = generator_token({"userId":str(result.inserted_id),"name": name})
+    return TokenSession(token=token,userId=str(result.inserted_id))
 
 
 def login(credentials: Credentials) -> Union[TokenSession, Error]:
@@ -121,8 +121,8 @@ def login(credentials: Credentials) -> Union[TokenSession, Error]:
             message="Credenciales no válidas",
             code=400
         )
-    
-    return TokenSession(token=uuid.uuid4(),userId=str(user_repository["_id"]))
+    token = generator_token({"userId":str(user_repository["_id"]),"name": user_repository["name"]})
+    return TokenSession(token=token,userId=str(user_repository["_id"]))
 
 
 def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, Error]:

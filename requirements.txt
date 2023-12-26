@@ -15,3 +15,6 @@ pymongo
 motor
 mongoengine
 pydantic
+bcrypt
+"passlib[bcrypt]"
+"python-jose[cryptography]"

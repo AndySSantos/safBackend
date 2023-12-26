@@ -47,7 +47,7 @@ class Credentials(BaseModel):
 
 
 class TokenSession(BaseModel):
-    token: UUID = Field(
+    token: str = Field(
         ..., description='Token contains information about the current user in the app'
     )
     userId: str = Field(..., description='id user')
