@@ -58,6 +58,7 @@ async def create_account(body: Credentials = None) -> Union[TokenSession, Error]
         '401': {'model': Error},
         '403': {'model': Error},
         '404': {'model': Error},
+        '406': {'model': Error},
     },
     tags=['user'],
 )

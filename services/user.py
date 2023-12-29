@@ -123,11 +123,11 @@ def login(credentials: Credentials) -> Union[TokenSession, Error]:
             message="Credenciales no válidas",
             code=400
         )
-    if not user_repository["emailVerified"]: 
+    """if not user_repository["emailVerified"]: 
         return Error(
             message="Email no verificado",
             code=403
-        )
+        )"""
     token = generator_token({"userId":str(user_repository["_id"]),"name": user_repository["name"]})
     return TokenSession(token=token,userId=str(user_repository["_id"]))
 
@@ -339,7 +339,8 @@ def profile(userId: str) -> Union[Profile, Error]:
     """Business rules:
         1.- Id user not empty
         2.- There is a user associated to that Id in the repository.
-        3.- We return information of the user as a profile.
+        3.- The email has been verify
+        4.- We return information of the user as a profile.
 
     Args:
         userId (str): _description_
@@ -364,8 +365,15 @@ def profile(userId: str) -> Union[Profile, Error]:
             message="Usuario no encontrado",
             code=404
         )
-    
+        
     #? 3
+    if not user_repository["emailVerified"]: 
+        return Error(
+            message="Email no verificado",
+            code=406
+        )
+    
+    #? 4
     lastUpdateFace = user_repository['lastUpgradeFace'] if user_repository['lastUpgradeFace'] else date(1999, 8, 8)
     return Profile(userId=str(userId),user=user_repository['name'],email=user_repository['email'],emailVerified=user_repository['emailVerified'],lastUpgradeFace=lastUpdateFace);
 
