@@ -3,6 +3,7 @@ from __future__ import annotations
 from dependencies import *
 
 from schemas.user import *
+from datetime import date
 
 from config.database import data_base
 from config.security import *
@@ -85,6 +86,7 @@ def login(credentials: Credentials) -> Union[TokenSession, Error]:
         1.- Non-empty credentials
         2.- Existing mail
         3.- Correct password
+        4.- Email verified
     Args:
         credentials (Credentials): _description_
 
@@ -121,6 +123,11 @@ def login(credentials: Credentials) -> Union[TokenSession, Error]:
             message="Credenciales no válidas",
             code=400
         )
+    if not user_repository["emailVerified"]: 
+        return Error(
+            message="Email no verificado",
+            code=403
+        )
     token = generator_token({"userId":str(user_repository["_id"]),"name": user_repository["name"]})
     return TokenSession(token=token,userId=str(user_repository["_id"]))
 
@@ -141,11 +148,11 @@ def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, 
     Returns:
         Union[Profile, Error]: _description_
     """
-    
+    print("Recibi llamado")
     #1
-    if profile is None or userId is None:
+    if profile is None or userId is None or len(userId)-24!=0:
         return Error(
-            message="Error",
+            message="No puedo responder a esta solicitud",
             code=403
         )
     
@@ -197,12 +204,13 @@ def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, 
     updated_user = COLLECTION.find_one(filter={"_id": userId})
     
     #7
+    lastUpdateFace = user_repository['lastUpgradeFace'] if user_repository['lastUpgradeFace'] else date(1999, 8, 8)
     return Profile(
         userId=str(updated_user["_id"]),
         user=updated_user["name"],
         email=updated_user["email"],
         emailVerified=updated_user["emailVerified"],
-        lastUpgradeFace=updated_user["lastUpgradeFace"]
+        lastUpgradeFace=lastUpdateFace
     )
  
     
@@ -222,8 +230,8 @@ def send_code_verification(userId: str) -> Union[None, Error]:
     """
     
     #1 
-    if userId is None or userId=="":
-        return Error(message="Forbidden", code=403)
+    if userId is None or userId=="" or len(userId)-24!=0:
+        return Error(message="No puedo responder a esta solicitud", code=403)
     
     #2 y 3
     userId = ObjectId(userId)
@@ -254,7 +262,7 @@ def send_code_verification(userId: str) -> Union[None, Error]:
     
     msg = Email(
         to=user_repository["email"],
-        subject="Verification code",
+        subject="SafUAMI Verification code",
         body=email_body
     )
     
@@ -299,9 +307,9 @@ def verification_code(userId: str, code: CodeVerification) -> Union[None, Error]
         Union[None, Error]: _description_
     """
     #1
-    if code is None or userId is None or userId=="":
+    if code is None or userId is None or userId=="" or len(userId)-24!=0:
         return Error(
-            message="Forbidden",
+            message="No puedo responder a esta solicitud",
             code=403
         )
     
@@ -325,5 +333,76 @@ def verification_code(userId: str, code: CodeVerification) -> Union[None, Error]
     
     #4
     COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"emailVerified":True}})
-    return None  # Verificacion exitosa
+    return Error(message=f"Cuenta {user_repository['email']} activada", code=204)  # Verificacion exitosa
 
+def profile(userId: str) -> Union[Profile, Error]:
+    """Business rules:
+        1.- Id user not empty
+        2.- There is a user associated to that Id in the repository.
+        3.- We return information of the user as a profile.
+
+    Args:
+        userId (str): _description_
+
+    Returns:
+        Union[Profile, Error]: _description_
+    """
+    
+    #? 1
+    if userId is None or userId=="" or len(userId)-24!=0:
+        return Error(
+            message="No puedo responder a esta solicitud",
+            code=403
+        )
+    
+    #? 2
+    userId = ObjectId(userId)
+    user_repository = COLLECTION.find_one(filter={"_id": userId})
+    
+    if not user_repository: 
+        return Error(
+            message="Usuario no encontrado",
+            code=404
+        )
+    
+    #? 3
+    lastUpdateFace = user_repository['lastUpgradeFace'] if user_repository['lastUpgradeFace'] else date(1999, 8, 8)
+    return Profile(userId=str(userId),user=user_repository['name'],email=user_repository['email'],emailVerified=user_repository['emailVerified'],lastUpgradeFace=lastUpdateFace);
+
+
+
+def delete_account(userId: str) -> Union[Error, None]:
+    """Business rules:
+        1.- Id user not empty
+        2.- There is a user associated to that Id in the repository.
+        3.- We delete the user from the database.
+
+    Args:
+        userId (str): _description_
+
+    Returns:
+        Union[Error, None]: _description_
+    """
+     #? 1
+    if userId is None or userId=="" or len(userId)-24!=0:
+        return Error(
+            message="No puedo responder a esta solicitud",
+            code=403
+        )
+    
+    #? 2
+    userId = ObjectId(userId)
+    user_repository = COLLECTION.find_one(filter={"_id": userId})
+    
+    if not user_repository: 
+        return Error(
+            message="Usuario no encontrado",
+            code=404
+        )
+    
+    #? 3
+    COLLECTION.delete_one(filter={"_id": userId});
+    return Error(
+            message="",
+            code=204
+        )

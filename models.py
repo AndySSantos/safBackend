@@ -38,7 +38,7 @@ class ProfileUpdate(BaseModel):
     currentPassword: str = Field(..., description='cuttently password')
     newPassword: Optional[str] = Field(None, description='new password for account')
     newUser: Optional[str] = Field(None, description='new username')
-    newEmail: Optional[EmailStr] = Field(None, description='new email for account')
+    newEmail: Optional[str] = Field(None, description='new email for account')
 
 
 class Credentials(BaseModel):

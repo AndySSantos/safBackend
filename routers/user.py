@@ -53,7 +53,7 @@ async def create_account(body: Credentials = None) -> Union[TokenSession, Error]
 
 @router.get(
     '/users/{userId}',
-    response_model=Profile,
+    response_model= Union[Profile, Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -61,28 +61,28 @@ async def create_account(body: Credentials = None) -> Union[TokenSession, Error]
     },
     tags=['user'],
 )
-def get_users_userId(
+async def profile_user(
     userId: str = Path(..., alias='userId')
 ) -> Union[Profile, Error]:
     """
     Recover user
     """
-    pass
+    return profile(userId)
 
 
 @router.delete(
     '/users/{userId}',
-    response_model=None,
+    response_model=Union[None, Error],
     responses={'400': {'model': Error}, '404': {'model': Error}},
     tags=['user'],
 )
-def delete_users_userId(
+async def delete_user(
     userId: str = Path(..., alias='userId')
 ) -> Union[None, Error]:
     """
     Delete account
     """
-    pass
+    return delete_account(userId)
 
 
 @router.patch(
