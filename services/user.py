@@ -14,7 +14,7 @@ import smtplib
 
 from bson.objectid import ObjectId
 
-import uuid
+import re
 
 
 COLLECTION = data_base['user']
@@ -25,6 +25,11 @@ def _substring(string: str,character: str ) -> str:
     position_character = list(string).index(character)
     substring = string[:position_character]
     return substring
+
+def _is_hex(string:str)-> bool:
+    length = 24
+    patern_hexa = re.compile(r'^[0-9a-fA-F]{%d}$' % length)
+    return bool(patern_hexa.match(string))
 
 
 def create_user(credentials: Credentials) -> Union[TokenSession, Error]:
@@ -414,3 +419,199 @@ def delete_account(userId: str) -> Union[Error, None]:
             message="",
             code=204
         )
+    
+    
+def reset_password(forgot_password: ForgotPassword) -> Union[TokenSession, Error]:
+    """Business rules:
+        1.- Validate non-empty or null mail
+        2.- Validate existing mail in the database
+        3.- Validation of verified email
+        4.- Send code to reset password
+
+    Args:
+        forgot_password (ForgotPassword): _description_
+    """
+    
+    #? 1
+    if forgot_password is None:
+        return Error(
+            message="Sin respuesta",
+            code=403
+        )
+    
+    #? 2
+    user = dict(forgot_password)
+    #* check if email is email or userId
+    #** detect on body 
+    userId = ObjectId(user['email']) if _is_hex(user["email"]) else ""
+    print(userId)    #** search on database depending userId 
+    user_repository = COLLECTION.find_one(filter={"email":user["email"]}) if userId == "" else COLLECTION.find_one(filter={"_id": userId})
+    
+    """user_repository = COLLECTION.find_one(filter={"email":forgot_password["email"]})
+    userId = ObjectId(forgot_password["email"]) if user_repository is None else ""
+    user_repository = COLLECTION.find_one(filter={"_id": userId}) if user_repository!="" else user_repository
+     """   
+    if not user_repository:
+        return Error(
+            message="Correo asociado a ninguna cuenta", 
+            code=404
+        )
+    
+    #? 3
+    
+    #? 4
+    verification_code = generator_code()
+    userId = str(user_repository["_id"])
+    userId = ObjectId(userId)
+    COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"codeVerification":verification_code}})
+    
+    username = user_repository["name"]
+    
+    
+    email_body = f"""
+    Hola {username},
+
+    Utiliza el siguiente codigo de verificacion, dentro de la apliacion para confirmar el cambio de contraseña
+    de tu cuenta.
+    
+    Codigo de verificacion: {verification_code}
+    
+    Este codigo de verificacion no caducara, pero puedes solicitar otro desde la app
+     
+    Saludos!
+    SafUAMI by SoftMinds
+    """ 
+    
+    
+    msg = Email(
+        to=user_repository["email"],
+        subject="SafUAMI Reset password",
+        body=email_body
+    )
+    
+    message = MIMEText(msg.body, "html")
+    message["From"] = USERNAME
+    message["To"] = msg.to#",".join(msg.to)
+    message["Subject"] = msg.subject
+    
+    try:
+        smtp = SMTP(HOST,PORT)
+        status_code, response = smtp.ehlo()
+        print(f"[*] Echoing the server: {status_code} {response}")
+        
+        status_code, response = smtp.starttls()
+        print(f"[*] Starting TLS connection: {status_code} {response}")
+        
+        status_code, response = smtp.login(USERNAME,PASSWORD)
+        print(f"[*] Logging in: {status_code} {response}")
+        
+        smtp.send_message(message)
+        
+        token = generator_token({"userId":str(user_repository["_id"]),"name": user_repository["name"]})
+        return TokenSession(token=token,userId=str(user_repository["_id"]))
+        
+    except Exception as e:
+        return Error(message=f"error servidor: {e}",code=500)
+    
+
+def change_password_from_user(userId: str, resetPassword: ResetPassword) -> Union[None, Error]:
+    """business rules:
+        1. User id and request body not empty are needed.
+        2. Verify that the code inside the request is the same as the one that was sent by mail.
+        3. Update password in the database.
+        4. Send confirmation of password change by email.
+
+    Args:
+        userId (str): _description_
+        resetPassword (ResetPassword): _description_
+
+    Returns:
+        Union[None, Error]: _description_
+    """
+    
+    #? 1
+    
+    #* Check user id not empty and exist on database
+    userId = ObjectId(userId) if userId!="" and _is_hex(userId) else ""
+    user_repository = COLLECTION.find_one(filter={"_id": userId}) if userId!="" else ""
+    
+    if user_repository == "" or not user_repository:
+        return Error(
+            message="Usuario no encontrado",
+            code=404
+        )
+    
+    
+    #* chech all body request not empty
+    reset = dict(resetPassword)
+    if not resetPassword or len(reset['code'])!=8 or reset['password']=="" :
+        return Error(
+            message="No puedo responder a esta peticion",
+            code=403
+        )
+        
+    
+    #? 2
+    
+    #* check code
+    check_code: bool = reset['code'] == user_repository['codeVerification']
+    if not check_code:
+        return Error(
+            message="Codigo erroneo",
+            code=401
+        )
+    #** active account if is needed
+    if not user_repository['emailVerified']:
+        # !print("cuenta no activa")
+        COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"emailVerified":True}})
+    #? 3
+    
+    #* create hash password
+    new_password, new_salt = hash_password(reset['password'])
+    
+    #* update password and salt
+    COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"hashPassword":new_password}})
+    COLLECTION.update_one(filter={"_id": userId}, update={"$set": {"saltPassword":new_salt}})
+    
+    #? 4
+    username = user_repository["name"]
+    
+    
+    email_body = f"""
+    Hola {username},
+
+    Haz cambiado tu contraseña con exito.
+     
+    ¡Saludos cordiales!
+    SafUAMI by SoftMinds
+    """ 
+    
+    
+    msg = Email(
+        to=user_repository["email"],
+        subject="SafUAMI Updated password",
+        body=email_body
+    )
+    
+    message = MIMEText(msg.body, "html")
+    message["From"] = USERNAME
+    message["To"] = msg.to#",".join(msg.to)
+    message["Subject"] = msg.subject
+    
+    try:
+        smtp = SMTP(HOST,PORT)
+        status_code, response = smtp.ehlo()
+        print(f"[*] Echoing the server: {status_code} {response}")
+        
+        status_code, response = smtp.starttls()
+        print(f"[*] Starting TLS connection: {status_code} {response}")
+        
+        status_code, response = smtp.login(USERNAME,PASSWORD)
+        print(f"[*] Logging in: {status_code} {response}")
+        
+        smtp.send_message(message)
+        
+        return Error(message="Actualizacion completada", code=204)
+        
+    except Exception as e:
+        return Error(message=f"error servidor: {e}",code=500)

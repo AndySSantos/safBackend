@@ -57,8 +57,12 @@ class CodeVerification(BaseModel):
     code: constr(min_length=8, max_length=8) = Field(
         ..., description='Verificacion code of 8 characteres'
     )
-
-
+class ResetPassword(BaseModel):
+    code: str = Field(
+        ..., description='Code of 8 characteres for auth change password'
+    )
+    password: str = Field(..., description='new password')
+    
 class StateTurnstile(Enum):
     OPEN = 'OPEN'
     CLOSED = 'CLOSED'
@@ -106,7 +110,7 @@ class StateAccess(Enum):
 
 
 class ForgotPassword(BaseModel):
-    email: EmailStr = Field(
+    email: str = Field(
         ...,
         description='An email exists in the system and is associated with an account.',
     )

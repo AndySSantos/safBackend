@@ -13,12 +13,12 @@ from services.user import *
 router = APIRouter(tags=['user'])
 
 
-@router.post('/forgotPassword', response_model=None, tags=['user'])
-def post_forgot_password(body: ForgotPassword = None) -> None:
+@router.post('/forgotPassword', response_model=Union[TokenSession, Error], tags=['user'])
+async def forgot_password(body: ForgotPassword = None) -> Union[TokenSession, Error]:
     """
     Reset password
     """
-    pass
+    return  reset_password(body)
 
 
 @router.post(
@@ -88,7 +88,7 @@ async def delete_user(
 
 @router.patch(
     '/users/{userId}',
-    response_model=Profile,
+    response_model=Union[None,Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -96,13 +96,13 @@ async def delete_user(
     },
     tags=['user'],
 )
-def patch_users_userId(
-    userId: str = Path(..., alias='userId'), body: ProfileUpdate = None
-) -> Union[Profile, Error]:
+def change_password(
+    userId: str = Path(..., alias='userId'), body: ResetPassword = None
+) -> Union[None, Error]:
     """
-    Modify a User
+    Modify only password from User specific
     """
-    pass
+    return change_password_from_user(userId,body)
 
 
 @router.put(

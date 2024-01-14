@@ -25,5 +25,6 @@ from models import (
     Turnstile,
     TurnstileUpdate,
     User,
-    Email
+    Email,
+    ResetPassword
 )
