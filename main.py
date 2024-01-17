@@ -19,7 +19,7 @@ app = FastAPI(
         'email': 'contact@softminds.com',
     },
     license={'url': 'https://www.apache.org/licenses/LICENSE-2.0.html', 'name': 'MIT'},
-    servers=[{'url': 'http://localhost:8000', 'description': 'Live Server'}],
+    servers=[{'url': 'http://127.0.0.1:8000', 'description': 'Live Server'}],
 )
 
 app.include_router(access.router)

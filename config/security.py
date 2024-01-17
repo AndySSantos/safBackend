@@ -1,7 +1,6 @@
 import bcrypt
 from dotenv import load_dotenv
-import os
-import uuid
+import os, re,uuid
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 
@@ -48,6 +47,11 @@ def decode_token(token: str)-> dict:
         return payload
     except Exception:
         return None
+
+def is_hex(string:str)-> bool:
+    length = 24
+    patern_hexa = re.compile(r'^[0-9a-fA-F]{%d}$' % length)
+    return bool(patern_hexa.match(string))
 
 
 #token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NThhNTcyOTcyZTdkMGJiYTMzZDdlZDMiLCJuYW1lIjoiY2JpMjE4MzA1MTA5OCJ9.AL1Yyp_Ic8PSvl5Qht9zrWu8cHK5ONdkIVl3ubBs0QQ"

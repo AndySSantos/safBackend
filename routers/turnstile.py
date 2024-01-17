@@ -8,20 +8,23 @@ from fastapi import APIRouter
 
 from dependencies import *
 
+from services.turnstile import *
+
+
 router = APIRouter(tags=['turnstile'])
 
 
 @router.get('/turnstiles', response_model=ElectronicTurnstiles, tags=['turnstile'])
-def get_turnstiles() -> ElectronicTurnstiles:
+def find_all_turnstiles() -> ElectronicTurnstiles:
     """
     Recover Turnstiles
     """
-    pass
+    return find_all()
 
 
 @router.post(
     '/turnstiles',
-    response_model=None,
+    response_model= Union[None, Error],
     responses={
         '400': {'model': Error},
         '401': {'model': Error},
@@ -29,16 +32,17 @@ def get_turnstiles() -> ElectronicTurnstiles:
     },
     tags=['turnstile'],
 )
-def post_turnstiles(body: Turnstile = None) -> Union[None, Error]:
+def create_turnstile(body: Turnstile = None) -> Union[None, Error]:
     """
     New turnstile
     """
-    pass
+    
+    return create(body)
 
 
 @router.get(
-    '/turnstiles/{turnstile_id}',
-    response_model=Turnstile,
+    '/turnstiles/{turnstileId}',
+    response_model= Union[Turnstile, Error],
     responses={
         '403': {'model': Error},
         '404': {'model': Error},
@@ -47,18 +51,18 @@ def post_turnstiles(body: Turnstile = None) -> Union[None, Error]:
     },
     tags=['turnstile'],
 )
-def get_turnstiles_turnstile_id(
-    turnstile_id: int = Path(..., alias='turnstileId')
+def find_turnstile(
+    turnstileId: str = Path(..., alias='turnstileId')
 ) -> Union[Turnstile, Error]:
     """
     Recover turnstile
     """
-    pass
+    return find_by_id(turnstileId)
 
 
 @router.patch(
-    '/turnstiles/{turnstile_id}',
-    response_model=Turnstile,
+    '/turnstiles/{turnstileId}',
+    response_model=Union[Turnstile, Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -66,33 +70,33 @@ def get_turnstiles_turnstile_id(
     },
     tags=['turnstile'],
 )
-def patch_turnstiles_turnstile_id(
-    turnstile_id: int = Path(..., alias='turnstileId'), body: TurnstileUpdate = None
+def update_turnstile_by(
+    turnstileId: int = Path(..., alias='turnstileId'), body: TurnstileUpdate = None
 ) -> Union[Turnstile, Error]:
     """
     Update Turnstile information
     """
-    pass
+    return update_state(body,turnstileId)
 
 
 @router.delete(
-    '/turnstiles/{turnstile_id}',
-    response_model=None,
+    '/turnstiles/{turnstileId}',
+    response_model=Union[None, Error],
     responses={'400': {'model': Error}, '404': {'model': Error}},
     tags=['turnstile'],
 )
-def delete_turnstiles_turnstile_id(
-    turnstile_id: int = Path(..., alias='turnstileId')
+def delete_turnstile(
+    turnstileId: str = Path(..., alias='turnstileId')
 ) -> Union[None, Error]:
     """
     Delete turnstile
     """
-    pass
+    return remove(turnstileId)
 
 
 @router.put(
-    '/turnstiles/{turnstile_id}',
-    response_model=None,
+    '/turnstiles/{turnstileId}',
+    response_model=Union[None, Error],
     responses={
         '401': {'model': Error},
         '403': {'model': Error},
@@ -100,8 +104,8 @@ def delete_turnstiles_turnstile_id(
     },
     tags=['turnstile'],
 )
-def put_turnstiles_turnstile_id(
-    turnstile_id: int = Path(..., alias='turnstileId'), body: TurnstileUpdate = None
+def update_turnstile(
+    turnstileId: int = Path(..., alias='turnstileId'), body: TurnstileUpdate = None
 ) -> Union[None, Error]:
     """
     Update turnstile information

@@ -1,6 +1,6 @@
 def turnstileEntity(item) -> dict:
     return {
-        "id": item["id"],
+        "id": str(item["_id"]),
         "gate": item["gate"],
         "location": item["location"],
         "urlPhoto": item["urlPhoto"],

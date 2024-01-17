@@ -31,6 +31,16 @@ class Error(BaseModel):
     code: int = Field(
         ..., description='Código único asociado con el error', examples=[12]
     )
+    
+class StatusRequest(BaseModel):
+    message: str = Field(
+        ...,
+        description='Mensaje amigable que describe el status',
+        examples=['User not found'],
+    )
+    code: int = Field(
+        ..., description='Código único asociado con el status HTML', examples=[12]
+    )
 
 
 class ProfileUpdate(BaseModel):
@@ -117,10 +127,10 @@ class ForgotPassword(BaseModel):
 
 
 class Turnstile(BaseModel):
-    id: str = Field(..., description='Id turnstile')
+    id: Optional[str] = Field(None, description='Id turnstile')
     gate: int = Field(..., description='gate where the turnstile is located')
     location: str = Field(..., description='location where the gate is located')
-    URLphoto: str = Field(..., description='photo of the gate')
+    urlPhoto: str = Field(..., description='photo of the gate')
     state: StateTurnstile = Field(..., description='state of the turnstile')
 
 

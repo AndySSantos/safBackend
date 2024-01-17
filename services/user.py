@@ -139,7 +139,7 @@ def login(credentials: Credentials) -> Union[TokenSession, Error]:
 
 def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, Error]:
     """Business rules:
-        1.- Request not empty and user id required 2.
+        1.- Request not empty and user id required 
         2.- Existence of a user in the repository associated to the id provided.
         3.- The password in the request body must match the one stored in the repository.
         4.- Identify which fields will be updated.
@@ -153,7 +153,7 @@ def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, 
     Returns:
         Union[Profile, Error]: _description_
     """
-    print("Recibi llamado")
+    #print("Recibi llamado")
     #1
     if profile is None or userId is None or len(userId)-24!=0:
         return Error(
@@ -174,7 +174,7 @@ def update_info_by_block(profile: ProfileUpdate, userId: str) -> Union[Profile, 
     #3 check password
     if not match_password(user_profile["currentPassword"],user_repository["hashPassword"]):
         return Error(
-            message="Usuario no autorizado",
+            message="Contraseña no valida",
             code=401
         )
     
@@ -544,7 +544,8 @@ def change_password_from_user(userId: str, resetPassword: ResetPassword) -> Unio
     
     #* chech all body request not empty
     reset = dict(resetPassword)
-    if not resetPassword or len(reset['code'])!=8 or reset['password']=="" :
+    print(reset)
+    if not resetPassword or reset['password']=="" :
         return Error(
             message="No puedo responder a esta peticion",
             code=403
@@ -555,7 +556,7 @@ def change_password_from_user(userId: str, resetPassword: ResetPassword) -> Unio
     
     #* check code
     check_code: bool = reset['code'] == user_repository['codeVerification']
-    if not check_code:
+    if not check_code or len(reset['code'])!=8 :
         return Error(
             message="Codigo erroneo",
             code=401
