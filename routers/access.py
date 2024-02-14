@@ -4,10 +4,14 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter
+from fastapi import APIRouter, UploadFile
 
 from dependencies import *
 
+from services.access import *
+
+import shutil
+import os
 router = APIRouter(tags=['access'])
 
 
@@ -32,8 +36,8 @@ def get_access_turnstiles(
 
 
 @router.post(
-    '/access/users/{user_id}/turnstiles/{turnstile_id}',
-    response_model=Access,
+    '/access/users/{userId}/turnstiles/{turnstileId}',
+    response_model=Error,
     responses={
         '400': {'model': Error},
         '403': {'model': Error},
@@ -42,12 +46,27 @@ def get_access_turnstiles(
     },
     tags=['access'],
 )
-def post_access_turnstile_turnstile_id_user_user_id(
-    turnstile_id: int = Path(..., alias='turnstileId'),
-    user_id: int = Path(..., alias='userId'),
-    body: Authentication = None,
-) -> Union[Access, Error]:
+async def saf_process(
+    
+    userId: str = Path(..., alias='userId'),turnstileId: str = Path(..., alias='turnstileId'),
+    file: UploadFile = File(...)
+) -> Error:
     """
     Authentication
     """
-    pass
+    # Ruta donde se guardarán las imágenes (ajústala según tus necesidades)
+    upload_folder = PATH_STATIC
+        
+        # Asegurarse de que la carpeta exista, si no, créala
+        #upload_folder.mkdir(parents=True, exist_ok=True)
+        
+        # Guardar la imagen con el mismo nombre que recibió en la solicitud
+        # Ruta completa del archivo
+    file_path = os.path.join(upload_folder, file.filename)
+
+        # Guardar el archivo
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+
+        
+    return system_autentication_facial(userId,file_path,turnstileId)

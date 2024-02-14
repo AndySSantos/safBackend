@@ -14,8 +14,12 @@ import smtplib
 
 from bson.objectid import ObjectId
 
+import shutil
+import os
+import tarfile
+import zipfile
 import re
-
+from fastapi import HTTPException, UploadFile, File
 
 COLLECTION = data_base['user']
 
@@ -616,3 +620,170 @@ def change_password_from_user(userId: str, resetPassword: ResetPassword) -> Unio
         
     except Exception as e:
         return Error(message=f"error servidor: {e}",code=500)
+    
+    
+def facial_registry(userId: str) -> Union[FaceRegitry,Error]:
+    """Business rules:
+        1. UserId not empty and in format.
+        2. There is a user associated to the id in the repository.
+        3. We return the current facial registration status for this user.
+
+    Args:
+        userId (str): _description_
+
+    Returns:
+        Union[FaceRegitry,Error]: _description_
+    """
+    
+    #? 1
+    userId = ObjectId(userId) if userId!="" and _is_hex(userId) else ""
+    #? 2
+    user_repository = COLLECTION.find_one(filter={"_id": userId}) if userId!="" else ""
+    
+    if user_repository == "" or not user_repository:
+        return Error(
+            message="Usuario no encontrado",
+            code=404
+        )
+    #? 3
+    lastUpdateFace = user_repository['lastUpgradeFace'] if user_repository['lastUpgradeFace'] else date(1999, 8, 8)
+    return FaceRegitry(userId=str(userId), faceCaptured=user_repository['faceCaptured'],lastUpgradeFace=lastUpdateFace)
+    
+
+async def facial_registry_update(userId: str, file: UploadFile) -> Union[None, FaceRegitry, Error]:
+    """Business rules:
+        1. UserId not empty and in format.
+        2. Save file.
+        3. There is a user associated with the id in the repository.
+        4. Update the facial registration status of this user.
+
+    Args:
+        userId (str): User ID.
+        file (UploadFile): Uploaded file.
+
+    Returns:
+        Union[None, FaceRegistry, Error]: Response object.
+    """
+    # Check if userId is not empty and in the correct format
+    userId = ObjectId(userId) if userId and ObjectId.is_valid(userId) else None
+
+    if not userId:
+        return Error(
+            message="Invalid User ID",
+            code=400
+        )
+
+    # Check if there is a user associated with the id in the repository
+    user_repository = COLLECTION.find_one({"_id": userId})
+
+    if not user_repository:
+        return Error(
+            message="User not found",
+            code=404
+        )
+
+    try:
+        
+        # Crear un directorio para cada usuario si no existe
+        user_directory = os.path.join(PATH_DATASET, str(userId))
+        os.makedirs(user_directory, exist_ok=True)
+
+        # Construir la ruta completa para el archivo
+        file_path = os.path.join(user_directory, f'{str(userId)}.tar')
+
+        # Leer y guardar el contenido del archivo en la nueva ruta
+        contents = await file.read()
+        with open(file_path, 'wb') as f:
+            f.write(contents)
+            
+
+        # Update facial registration status of the user
+        #day = date.today()
+        COLLECTION.update_one({"_id": userId}, {"$set": {"faceCaptured": True}})
+        #COLLECTION.update_one({"_id": userId}, {"$set": {"lastUpgradeFace": today}})
+        print("Exito")
+        """return FaceRegistry(
+            userId=str(userId),
+            faceCaptured=True,
+            lastUpgradeFace=today
+        )"""
+        return Error(message="Ok", code=200)
+    except HTTPException as e:
+        # Captura y maneja las excepciones HTTP específicas si es necesario
+        return Error(message=str(e.detail), code=e.status_code)
+    except Exception as e:
+        # Captura y maneja otras excepciones inesperadas
+        return Error(message=str(e), code=500)
+    
+    
+def save_photos(userId:str, file: UploadFile)-> Error:
+    """Business rules:
+    1. UserId associated to an account.
+    2. File with .zip or .tar ending.
+    3. Save file and unzip in the dataset.
+    4. Update face record update date and face record status as appropriate.
+
+    Args:
+        userId (str): _description_
+        file (UploadFile): _description_
+
+    Returns:
+        Error: _description_
+    """
+    #? 1
+    #* Check if userId is not empty and in the correct format
+    userId = ObjectId(userId) if userId and ObjectId.is_valid(userId) else None
+
+    if not userId:
+        return Error(
+            message="Invalid User ID",
+            code=400
+        )
+
+    #* Check if there is a user associated with the id in the repository
+    user_repository = COLLECTION.find_one({"_id": userId})
+
+    if not user_repository:
+        return Error(
+            message="User not found",
+            code=404
+        )
+    #?2
+    
+    upload_folder = PATH_DATASET
+
+    #* Verificar la extensión del archivo
+    file_extension = file.filename.split(".")[-1]
+    if not file_extension in ['zip','tar','gz']:
+        return Error(message='compressed file not allowed', code=403)
+    
+    #? 3
+    #* Guardar el archivo en el servidor
+    file_path = os.path.join(upload_folder, file.filename)
+    with open(file_path, "wb") as f:
+        f.write(file.file.read())
+
+    #* Descomprimir el archivo según su extensión
+    if os.path.exists(f'{upload_folder}/{userId}'):
+        shutil.rmtree(f'{upload_folder}/{userId}')
+    os.makedirs(f'{upload_folder}/{userId}')
+    
+    if file_extension == "tar":
+        with tarfile.open(file_path, "r") as tar:
+            tar.extractall(f'{upload_folder}/{userId}')
+    elif file_extension == "zip":
+        with zipfile.ZipFile(file_path, "r") as zip_ref:
+            zip_ref.extractall(f'{upload_folder}/{userId}')
+            
+    elif file_extension == "gz":
+        with tarfile.open(file_path, "r:gz") as tar:
+            tar.extractall(f'{upload_folder}/{userId}')
+            
+    #? 4
+    # Update facial registration status of the user
+    day = date.today()
+    COLLECTION.update_one({"_id": userId}, {"$set": {"faceCaptured": True}})
+    COLLECTION.update_one({"_id": userId}, {"$set": {"lastUpgradeFace": str(day)}})
+    
+    return  Error(code=201, message= "File uploaded and extracted successfully")
+    

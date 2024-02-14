@@ -87,7 +87,7 @@ class TurnstileUpdate(BaseModel):
     state: Optional[StateTurnstile] = Field(None, description='update state tunstile')
 
 
-class FaceRegitry(BaseModel):
+class FaceRegistry(BaseModel):
     userId: str = Field(..., description='Id user')
     faceCaptured: bool = Field(
         ..., description='Indicates that the user has captured his or her face.'

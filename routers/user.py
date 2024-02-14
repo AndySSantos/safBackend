@@ -4,13 +4,17 @@
 
 from __future__ import annotations
 
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, UploadFile, File
 
 from dependencies import *
 
 from services.user import *
 
 router = APIRouter(tags=['user'])
+import shutil
+import os
+import tarfile
+import zipfile
 
 
 @router.post('/forgotPassword', response_model=Union[TokenSession, Error], tags=['user'])
@@ -127,38 +131,33 @@ async def update_profile(
 
 @router.get(
     '/users/{userId}/pictures',
-    response_model=FaceRegitry,
+    response_model=Union[FaceRegistry,Error],
     responses={'404': {'model': Error}},
     tags=['user'],
 )
-def get_users_userId_pictures(
+def find_face_registry(
     userId: str = Path(..., alias='userId')
-) -> Union[FaceRegitry, Error]:
+) -> Union[FaceRegistry, Error]:
     """
     Existence of facial register
     """
-    pass
-
+    return facial_registry(userId)
 
 @router.post(
     '/users/{userId}/pictures',
-    response_model=None,
+    response_model=Error,
     responses={
-        '201': {'model': FaceRegitry},
-        '400': {'model': Error},
-        '401': {'model': Error},
-        '403': {'model': Error},
-        '404': {'model': Error},
+        201: {'model': FaceRegistry, 'description': 'Facial registration successful'},
+        400: {'model': Error, 'description': 'Bad Request'},
+        401: {'model': Error, 'description': 'Unauthorized'},
+        403: {'model': Error, 'description': 'Forbidden'},
+        404: {'model': Error, 'description': 'Not Found'},
     },
     tags=['user'],
 )
-def post_users_userId_pictures(
-    userId: str = Path(..., alias='userId'), body: SavePictures = None
-) -> Union[None, FaceRegitry, Error]:
-    """
-    Facial registration request
-    """
-    pass
+async def facial_registry(userId: str = Path(..., alias='userId'),file: UploadFile = File(...))-> Error:
+    
+    return save_photos(userId,file)
 
 
 @router.post(
@@ -202,7 +201,66 @@ def verify_code_confirmation(
     return verification_code(userId, body)
 
 
-@router.get('/users')
-def get_users():
-    #return usersEntity(data_base.user.find())
-    return "users"
+@router.get('/users',
+            tags=['user'])
+def get_users()->Error:
+    return Error(message="Accion no valida", code=401)
+
+"""
+@router.post("/upload-zip")
+async def upload_zip(file: UploadFile = File(...)):
+    print(file.filename)
+    return {"filename": file.filename, "content_type": file.content_type}
+"""
+@router.post("/users/{userId}/upload_file")
+async def upload_file(userId: str = Path(..., alias='userId'),file: UploadFile = File(...)) -> Error:
+   return save_photos(userId, file)
+
+
+@router.post("/upload-image")
+async def upload_image(file: UploadFile):
+        # Ruta donde se guardarán las imágenes (ajústala según tus necesidades)
+        upload_folder = PATH_STATIC
+        
+        # Asegurarse de que la carpeta exista, si no, créala
+        #upload_folder.mkdir(parents=True, exist_ok=True)
+        
+        # Guardar la imagen con el mismo nombre que recibió en la solicitud
+        # Ruta completa del archivo
+        file_path = os.path.join(upload_folder, file.filename)
+
+        # Guardar el archivo
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+
+        
+        return {"message": "Imagen recibida y guardada correctamente", "file_path": str(file_path)}
+    
+"""upload_folder = PATH_DATASET
+
+    # Verificar la extensión del archivo
+    file_extension = file.filename.split(".")[-1]
+    
+    # Guardar el archivo en el servidor
+    file_path = os.path.join(upload_folder, file.filename)
+    with open(file_path, "wb") as f:
+        f.write(file.file.read())
+
+    # Descomprimir el archivo según su extensión
+    if os.path.exists(f'{upload_folder}/{userId}'):
+        shutil.rmtree(f'{upload_folder}/{userId}')
+    os.makedirs(f'{upload_folder}/{userId}')
+    
+    if file_extension == "tar":
+        with tarfile.open(file_path, "r") as tar:
+            tar.extractall(f'{upload_folder}/{userId}')
+    elif file_extension == "zip":
+        with zipfile.ZipFile(file_path, "r") as zip_ref:
+            zip_ref.extractall(f'{upload_folder}/{userId}')
+            
+    elif file_extension == "gz":
+        with tarfile.open(file_path, "r:gz") as tar:
+            tar.extractall(f'{upload_folder}/{userId}')
+
+    return  Error(code=201, message= "File uploaded and extracted successfully")
+"""

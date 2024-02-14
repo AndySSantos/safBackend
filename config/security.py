@@ -17,6 +17,9 @@ PORT = os.environ.get('MAIL_PORT',465)
 SECRET_KEY =os.environ.get('SECRET_KEY')
 ALGORITHM = os.environ.get('ALGORITHM')
 
+PATH_DATASET = os.environ.get('PATH_DATASET')
+PATH_STATIC = os.environ.get('PATH_STATIC')
+
 def salt_hash() -> str:
     salt_bytes = bcrypt.gensalt(int(HASH_LEVEL))
     return salt_bytes.decode(ENCODING)

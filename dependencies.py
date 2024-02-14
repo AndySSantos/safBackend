@@ -16,7 +16,7 @@ from models import (
     Credentials,
     ElectronicTurnstiles,
     Error,
-    FaceRegitry,
+    FaceRegistry,
     ForgotPassword,
     Profile,
     ProfileUpdate,
