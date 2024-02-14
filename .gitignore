@@ -3,4 +3,4 @@ spec/
 config/.env
 saf/dataset
 saf/static
-saf/models
+saf/faces

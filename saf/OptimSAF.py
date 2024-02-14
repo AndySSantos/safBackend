@@ -8,7 +8,7 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 from torchvision.models import resnet18
 from PIL import Image
-from face import Face
+from saf.face import Face
 
 
 class Detector(Face):
@@ -24,7 +24,7 @@ class Detector(Face):
         
     def __detect_face(self):
        #invoque delimiter face openCV
-        delimiter = cv.CascadeClassifier('./utils/haarcascade_frontalface_default.xml') 
+        delimiter = cv.CascadeClassifier('./saf/utils/haarcascade_frontalface_default.xml') 
         people = os.listdir(self.data_path)
         if '.DS_Store' in people:
             people.remove('.DS_Store')
@@ -214,9 +214,9 @@ if __name__=='__main__':
     """selector = Selector()
     userId = 'Arnold'
     selector.get_best_image('./dataset/Arnold',f'./dataset/{userId}.jpg')"""
-    gestor = Gestor('./dataset/faces')
+    gestor = Gestor('./saf/dataset/faces')
     userId='Arnold'
-    match_user = gestor.recognition('./datas/Arnold/3.jpg')
+    match_user = gestor.recognition('./saf/otros/spencer.jpg')
     match_user = match_user[:match_user.find('.')] if match_user!='' or match_user!='Unknown' else 'Unknown'
     print(f'Usuario: {match_user}')
     """detector = Detector()

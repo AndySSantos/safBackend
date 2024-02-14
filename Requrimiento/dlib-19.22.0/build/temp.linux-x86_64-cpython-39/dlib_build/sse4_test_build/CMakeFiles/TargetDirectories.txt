@@ -1,0 +1,2 @@
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-39/dlib_build/sse4_test_build/CMakeFiles/edit_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-39/dlib_build/sse4_test_build/CMakeFiles/rebuild_cache.dir

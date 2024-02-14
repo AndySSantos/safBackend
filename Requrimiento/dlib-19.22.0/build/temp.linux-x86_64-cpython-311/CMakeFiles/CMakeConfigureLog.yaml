@@ -1,0 +1,1102 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      The system is: Linux - 6.7.4-arch1-1 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1ed98/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_1ed98.dir/build.make CMakeFiles/cmTC_1ed98.dir/build
+        make[1]: Entering directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5'
+        Building C object CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.1 20230801 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1ed98.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccpxcnj0.s
+        GNU C17 (GCC) version 13.2.1 20230801 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 13.2.1 20230801, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include
+         /usr/local/include
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed
+         /usr/include
+        End of search list.
+        Compiler executable checksum: eb0b45108af02c02a078961940bce3e9
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/'
+         as -v --64 -o CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o /tmp/ccpxcnj0.s
+        GNU assembler version 2.42.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.42.0
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_1ed98
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ed98.dir/link.txt --verbose=1
+        /usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -o cmTC_1ed98 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.1 20230801 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ed98' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1ed98.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyEtqhc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_1ed98 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../.. CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ed98' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1ed98.'
+        make[1]: Leaving directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+          add: [/usr/local/include]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1ed98/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_1ed98.dir/build.make CMakeFiles/cmTC_1ed98.dir/build]
+        ignore line: [make[1]: Entering directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-Crgky5']
+        ignore line: [Building C object CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.1 20230801 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1ed98.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccpxcnj0.s]
+        ignore line: [GNU C17 (GCC) version 13.2.1 20230801 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.1 20230801  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: eb0b45108af02c02a078961940bce3e9]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o /tmp/ccpxcnj0.s]
+        ignore line: [GNU assembler version 2.42.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.42.0]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_1ed98]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ed98.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v -rdynamic CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -o cmTC_1ed98 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.1 20230801 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_1ed98' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1ed98.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyEtqhc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_1ed98 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../.. CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccyEtqhc.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_1ed98] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..]
+          arg [CMakeFiles/cmTC_1ed98.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_583af/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_583af.dir/build.make CMakeFiles/cmTC_583af.dir/build
+        make[1]: Entering directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq'
+        Building CXX object CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.1 20230801 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_583af.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccb9Frdv.s
+        GNU C++17 (GCC) version 13.2.1 20230801 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 13.2.1 20230801, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include
+         /usr/local/include
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed
+         /usr/include
+        End of search list.
+        Compiler executable checksum: f089b864c6bcbc2427e9850aa6414a11
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/'
+         as -v --64 -o CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccb9Frdv.s
+        GNU assembler version 2.42.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.42.0
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_583af
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_583af.dir/link.txt --verbose=1
+        /usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_583af 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.2.1 20230801 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_583af' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_583af.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF787Xs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_583af /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../.. CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_583af' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_583af.'
+        make[1]: Leaving directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+          add: [/usr/local/include]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1] ==> [/usr/include/c++/13.2.1]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu] ==> [/usr/include/c++/13.2.1/x86_64-pc-linux-gnu]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward] ==> [/usr/include/c++/13.2.1/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13.2.1;/usr/include/c++/13.2.1/x86_64-pc-linux-gnu;/usr/include/c++/13.2.1/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_583af/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_583af.dir/build.make CMakeFiles/cmTC_583af.dir/build]
+        ignore line: [make[1]: Entering directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4W0ZHq']
+        ignore line: [Building CXX object CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.1 20230801 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_583af.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccb9Frdv.s]
+        ignore line: [GNU C++17 (GCC) version 13.2.1 20230801 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.2.1 20230801  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: f089b864c6bcbc2427e9850aa6414a11]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccb9Frdv.s]
+        ignore line: [GNU assembler version 2.42.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.42.0]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_583af]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_583af.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_583af ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://bugs.archlinux.org/ --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.2.1 20230801 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_583af' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_583af.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccF787Xs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_583af /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../.. CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccF787Xs.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_583af] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..]
+          arg [CMakeFiles/cmTC_583af.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/external/pybind11/tools/pybind11Tools.cmake:23 (check_cxx_compiler_flag)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/external/pybind11/CMakeLists.txt:33 (include)"
+    checks:
+      - "Performing Test HAS_CPP14_FLAG"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/external/pybind11/tools"
+    buildResult:
+      variable: "HAS_CPP14_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_99cfa/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_99cfa.dir/build.make CMakeFiles/cmTC_99cfa.dir/build
+        make[1]: Entering directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl'
+        Building CXX object CMakeFiles/cmTC_99cfa.dir/src.cxx.o
+        /usr/bin/c++ -DHAS_CPP14_FLAG  -std=c++14 -o CMakeFiles/cmTC_99cfa.dir/src.cxx.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl/src.cxx
+        Linking CXX executable cmTC_99cfa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_99cfa.dir/link.txt --verbose=1
+        /usr/bin/c++ -rdynamic CMakeFiles/cmTC_99cfa.dir/src.cxx.o -o cmTC_99cfa 
+        make[1]: Leaving directory '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-mBp3Nl'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake:13 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/set_compiler_specific_options.cmake:13 (include)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:33 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_sse4"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build"
+    buildResult:
+      variable: "test_for_sse4_worked"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /usr/bin/cmake -S/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_sse4 -B/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build/CMakeFiles /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build//CMakeFiles/progress.marks
+        /usr/bin/make  -f CMakeFiles/Makefile2 all
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build'
+        make[1]: No se hace nada para 'all'.
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build'
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/sse4_test_build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake:13 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/set_compiler_specific_options.cmake:17 (include)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:33 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_avx"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build"
+    buildResult:
+      variable: "test_for_avx_worked"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /usr/bin/cmake -S/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_avx -B/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build/CMakeFiles /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build//CMakeFiles/progress.marks
+        /usr/bin/make  -f CMakeFiles/Makefile2 all
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build'
+        make[1]: No se hace nada para 'all'.
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build'
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/avx_test_build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/check_if_neon_available.cmake:14 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/set_compiler_specific_options.cmake:21 (include)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:33 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build"
+    buildResult:
+      variable: "test_for_neon_worked"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /usr/bin/cmake -S/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon -B/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build//CMakeFiles/progress.marks
+        /usr/bin/make  -f CMakeFiles/Makefile2 all
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        /usr/bin/make  -f CMakeFiles/neon_test.dir/build.make CMakeFiles/neon_test.dir/depend
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        cd /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles/neon_test.dir/DependInfo.cmake
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles/neon_test.dir/DependInfo.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles/neon_test.dir/depend.internal".
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build/CMakeFiles/neon_test.dir/depend.internal".
+        Scanning dependencies of target neon_test
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        /usr/bin/make  -f CMakeFiles/neon_test.dir/build.make CMakeFiles/neon_test.dir/build
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        [ 50%] Building CXX object CMakeFiles/neon_test.dir/neon_test.cpp.o
+        /usr/bin/c++    -o CMakeFiles/neon_test.dir/neon_test.cpp.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon/neon_test.cpp
+        /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_neon/neon_test.cpp:3:2: error: #error "No NEON"
+            3 | #error "No NEON"
+              |  ^~~~~
+        make[2]: *** [CMakeFiles/neon_test.dir/build.make:75: CMakeFiles/neon_test.dir/neon_test.cpp.o] Error 1
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        make[1]: *** [CMakeFiles/Makefile2:83: CMakeFiles/neon_test.dir/all] Error 2
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/neon_test_build'
+        make: *** [Makefile:91: all] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:327 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7f049/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_7f049.dir/build.make CMakeFiles/cmTC_7f049.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX'
+        Building C object CMakeFiles/cmTC_7f049.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -o CMakeFiles/cmTC_7f049.dir/src.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX/src.c
+        Linking C executable cmTC_7f049
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f049.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_7f049.dir/src.c.o -o cmTC_7f049 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-JNLZXX'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:682 (check_library_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/libX11.so;/usr/lib/libXext.so"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_863a3/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_863a3.dir/build.make CMakeFiles/cmTC_863a3.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p'
+        Building C object CMakeFiles/cmTC_863a3.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -fPIE -o CMakeFiles/cmTC_863a3.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p/CheckFunctionExists.c
+        Linking C executable cmTC_863a3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_863a3.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay -rdynamic CMakeFiles/cmTC_863a3.dir/CheckFunctionExists.c.o -o cmTC_863a3  /usr/lib/libX11.so /usr/lib/libXext.so 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-b2wr0p'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:697 (check_function_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e1a25/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e1a25.dir/build.make CMakeFiles/cmTC_e1a25.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi'
+        Building C object CMakeFiles/cmTC_e1a25.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -fPIE -o CMakeFiles/cmTC_e1a25.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi/CheckFunctionExists.c
+        Linking C executable cmTC_e1a25
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1a25.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname -rdynamic CMakeFiles/cmTC_e1a25.dir/CheckFunctionExists.c.o -o cmTC_e1a25 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-hmt0xi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:711 (check_function_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_56d2c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_56d2c.dir/build.make CMakeFiles/cmTC_56d2c.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i'
+        Building C object CMakeFiles/cmTC_56d2c.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -fPIE -o CMakeFiles/cmTC_56d2c.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i/CheckFunctionExists.c
+        Linking C executable cmTC_56d2c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56d2c.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect -rdynamic CMakeFiles/cmTC_56d2c.dir/CheckFunctionExists.c.o -o cmTC_56d2c 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-4VK63i'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:720 (check_function_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8abb2/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8abb2.dir/build.make CMakeFiles/cmTC_8abb2.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9'
+        Building C object CMakeFiles/cmTC_8abb2.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -fPIE -o CMakeFiles/cmTC_8abb2.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9/CheckFunctionExists.c
+        Linking C executable cmTC_8abb2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8abb2.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove -rdynamic CMakeFiles/cmTC_8abb2.dir/CheckFunctionExists.c.o -o cmTC_8abb2 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-tD7aB9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:729 (check_function_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a6e25/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_a6e25.dir/build.make CMakeFiles/cmTC_a6e25.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv'
+        Building C object CMakeFiles/cmTC_a6e25.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -fPIE -o CMakeFiles/cmTC_a6e25.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv/CheckFunctionExists.c
+        Linking C executable cmTC_a6e25
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6e25.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat -rdynamic CMakeFiles/cmTC_a6e25.dir/CheckFunctionExists.c.o -o cmTC_a6e25 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-WYuAmv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:739 (check_library_exists)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:390 (include)"
+    checks:
+      - "Looking for IceConnectionNumber in ICE"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9d86f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_9d86f.dir/build.make CMakeFiles/cmTC_9d86f.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl'
+        Building C object CMakeFiles/cmTC_9d86f.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -fPIE -o CMakeFiles/cmTC_9d86f.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl/CheckFunctionExists.c
+        Linking C executable cmTC_9d86f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d86f.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -rdynamic CMakeFiles/cmTC_9d86f.dir/CheckFunctionExists.c.o -o cmTC_9d86f  -lICE 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-1l7fjl'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_libpng.cmake:25 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:434 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libpng"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build"
+    buildResult:
+      variable: "test_for_libpng_worked"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /usr/bin/cmake -S/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libpng -B/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build//CMakeFiles/progress.marks
+        /usr/bin/make  -f CMakeFiles/Makefile2 all
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        /usr/bin/make  -f CMakeFiles/libpng_test.dir/build.make CMakeFiles/libpng_test.dir/depend
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        cd /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libpng /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libpng /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles/libpng_test.dir/DependInfo.cmake
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles/libpng_test.dir/DependInfo.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles/libpng_test.dir/depend.internal".
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles/libpng_test.dir/depend.internal".
+        Scanning dependencies of target libpng_test
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        /usr/bin/make  -f CMakeFiles/libpng_test.dir/build.make CMakeFiles/libpng_test.dir/build
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        [ 50%] Building CXX object CMakeFiles/libpng_test.dir/libpng_test.cpp.o
+        /usr/bin/c++    -o CMakeFiles/libpng_test.dir/libpng_test.cpp.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libpng/libpng_test.cpp
+        [100%] Linking CXX executable libpng_test
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/libpng_test.dir/link.txt --verbose=1
+        /usr/bin/c++ -rdynamic CMakeFiles/libpng_test.dir/libpng_test.cpp.o -o libpng_test  -lpng -lz 
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        [100%] Built target libpng_test
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build'
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libpng_build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_libjpeg.cmake:25 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:495 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libjpeg"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build"
+    buildResult:
+      variable: "test_for_libjpeg_worked"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile
+        /usr/bin/cmake -S/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libjpeg -B/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build --check-build-system CMakeFiles/Makefile.cmake 0
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build//CMakeFiles/progress.marks
+        /usr/bin/make  -f CMakeFiles/Makefile2 all
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        /usr/bin/make  -f CMakeFiles/libjpeg_test.dir/build.make CMakeFiles/libjpeg_test.dir/depend
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        cd /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libjpeg /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libjpeg /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles/libjpeg_test.dir/DependInfo.cmake
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles/libjpeg_test.dir/DependInfo.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles/libjpeg_test.dir/depend.internal".
+        Dependee "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles/CMakeDirectoryInformation.cmake" is newer than depender "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles/libjpeg_test.dir/depend.internal".
+        Scanning dependencies of target libjpeg_test
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        /usr/bin/make  -f CMakeFiles/libjpeg_test.dir/build.make CMakeFiles/libjpeg_test.dir/build
+        make[2]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        [ 50%] Building CXX object CMakeFiles/libjpeg_test.dir/libjpeg_test.cpp.o
+        /usr/bin/c++    -o CMakeFiles/libjpeg_test.dir/libjpeg_test.cpp.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/test_for_libjpeg/libjpeg_test.cpp
+        [100%] Linking CXX executable libjpeg_test
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/libjpeg_test.dir/link.txt --verbose=1
+        /usr/bin/c++ -rdynamic CMakeFiles/libjpeg_test.dir/libjpeg_test.cpp.o -o libjpeg_test  -ljpeg 
+        make[2]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        [100%] Built target libjpeg_test
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build'
+        /usr/bin/cmake -E cmake_progress_start /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/test_for_libjpeg_build/CMakeFiles 0
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:73 (CHECK_FUNCTION_EXISTS)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    checks:
+      - "Looking for cblas_ddot"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "PKGCFG_HAVE_CBLAS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6aca7/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_6aca7.dir/build.make CMakeFiles/cmTC_6aca7.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI'
+        Building C object CMakeFiles/cmTC_6aca7.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cblas_ddot -fPIE -o CMakeFiles/cmTC_6aca7.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI/CheckFunctionExists.c
+        Linking C executable cmTC_6aca7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6aca7.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cblas_ddot -rdynamic CMakeFiles/cmTC_6aca7.dir/CheckFunctionExists.c.o -o cmTC_6aca7 
+        /usr/bin/ld: CMakeFiles/cmTC_6aca7.dir/CheckFunctionExists.c.o: en la función `main':
+        CheckFunctionExists.c:(.text+0x10): undefined reference to `cblas_ddot'
+        collect2: error: ld devolvió el estado de salida 1
+        make[1]: *** [CMakeFiles/cmTC_6aca7.dir/build.make:99: cmTC_6aca7] Error 1
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-K1o3yI'
+        make: *** [Makefile:127: cmTC_6aca7/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:250 (check_include_file)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:85 (check_type_size)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8b52d/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8b52d.dir/build.make CMakeFiles/cmTC_8b52d.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR'
+        Building C object CMakeFiles/cmTC_8b52d.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -fPIE -o CMakeFiles/cmTC_8b52d.dir/CheckIncludeFile.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR/CheckIncludeFile.c
+        Linking C executable cmTC_8b52d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b52d.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_8b52d.dir/CheckIncludeFile.c.o -o cmTC_8b52d 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-lMocOR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:251 (check_include_file)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:85 (check_type_size)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d3f11/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_d3f11.dir/build.make CMakeFiles/cmTC_d3f11.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c'
+        Building C object CMakeFiles/cmTC_d3f11.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -fPIE -o CMakeFiles/cmTC_d3f11.dir/CheckIncludeFile.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c/CheckIncludeFile.c
+        Linking C executable cmTC_d3f11
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3f11.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_d3f11.dir/CheckIncludeFile.c.o -o cmTC_d3f11 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-B2oP1c'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:252 (check_include_file)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:85 (check_type_size)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a5e89/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_a5e89.dir/build.make CMakeFiles/cmTC_a5e89.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK'
+        Building C object CMakeFiles/cmTC_a5e89.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -fPIE -o CMakeFiles/cmTC_a5e89.dir/CheckIncludeFile.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK/CheckIncludeFile.c
+        Linking C executable cmTC_a5e89
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a5e89.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_a5e89.dir/CheckIncludeFile.c.o -o cmTC_a5e89 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-CpP5LK'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:85 (check_type_size)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    checks:
+      - "Check size of void*"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "HAVE_SIZE_OF_VOID_PTR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b5d1f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_b5d1f.dir/build.make CMakeFiles/cmTC_b5d1f.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz'
+        Building C object CMakeFiles/cmTC_b5d1f.dir/SIZE_OF_VOID_PTR.c.o
+        /usr/bin/cc   -fPIE -o CMakeFiles/cmTC_b5d1f.dir/SIZE_OF_VOID_PTR.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz/SIZE_OF_VOID_PTR.c
+        Linking C executable cmTC_b5d1f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5d1f.dir/link.txt --verbose=1
+        /usr/bin/cc -rdynamic CMakeFiles/cmTC_b5d1f.dir/SIZE_OF_VOID_PTR.c.o -o cmTC_b5d1f 
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-DeMpWz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/usr/share/cmake/Modules/FindBLAS.cmake:372 (check_function_exists)"
+      - "/usr/share/cmake/Modules/FindBLAS.cmake:416 (check_blas_libraries)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/cmake_utils/find_blas.cmake:423 (find_package)"
+      - "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/dlib/CMakeLists.txt:565 (include)"
+    directories:
+      source: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V"
+      binary: "/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "True"
+    buildResult:
+      variable: "BLAS_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3d338/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3d338.dir/build.make CMakeFiles/cmTC_3d338.dir/build
+        make[1]: se entra en el directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V'
+        Building C object CMakeFiles/cmTC_3d338.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -fPIE -o CMakeFiles/cmTC_3d338.dir/CheckFunctionExists.c.o -c /home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V/CheckFunctionExists.c
+        Linking C executable cmTC_3d338
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d338.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ -rdynamic CMakeFiles/cmTC_3d338.dir/CheckFunctionExists.c.o -o cmTC_3d338 
+        /usr/bin/ld: CMakeFiles/cmTC_3d338.dir/CheckFunctionExists.c.o: en la función `main':
+        CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+        collect2: error: ld devolvió el estado de salida 1
+        make[1]: *** [CMakeFiles/cmTC_3d338.dir/build.make:99: cmTC_3d338] Error 1
+        make[1]: se sale del directorio '/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/CMakeScratch/TryCompile-vQu67V'
+        make: *** [Makefile:127: cmTC_3d338/fast] Error 2
+        
+      exitCode: 2
+...

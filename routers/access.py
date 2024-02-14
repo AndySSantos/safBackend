@@ -55,7 +55,7 @@ async def saf_process(
     Authentication
     """
     # Ruta donde se guardarán las imágenes (ajústala según tus necesidades)
-    upload_folder = PATH_STATIC
+    upload_folder = PATH_DATASET
         
         # Asegurarse de que la carpeta exista, si no, créala
         #upload_folder.mkdir(parents=True, exist_ok=True)

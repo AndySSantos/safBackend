@@ -1,0 +1,3 @@
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libpng/build/CMakeFiles/edit_cache.dir
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libpng/build/CMakeFiles/rebuild_cache.dir
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libpng/build/CMakeFiles/libpng_test.dir

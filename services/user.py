@@ -20,8 +20,11 @@ import tarfile
 import zipfile
 import re
 from fastapi import HTTPException, UploadFile, File
+from saf.OptimSAF import Detector,Selector
 
 COLLECTION = data_base['user']
+detector = Detector()
+selector = Selector()
 
 
 def _substring(string: str,character: str ) -> str:
@@ -771,13 +774,25 @@ def save_photos(userId:str, file: UploadFile)-> Error:
     if file_extension == "tar":
         with tarfile.open(file_path, "r") as tar:
             tar.extractall(f'{upload_folder}/{userId}')
+            os.remove(file_path)
     elif file_extension == "zip":
         with zipfile.ZipFile(file_path, "r") as zip_ref:
             zip_ref.extractall(f'{upload_folder}/{userId}')
-            
+            os.remove(file_path)
     elif file_extension == "gz":
         with tarfile.open(file_path, "r:gz") as tar:
             tar.extractall(f'{upload_folder}/{userId}')
+            os.remove(file_path)
+    
+    detector.configure_dataset()
+    
+    if not str(userId) in detector.track_people:
+        shutil.rmtree(f'{upload_folder}/{userId}')
+        os.remove(file_path)
+        return Error(message='Intente de nuevo', code=400)
+    
+    
+    selector.get_best_image(f'./saf/dataset/{userId}',f'./saf/dataset/faces/{userId}.jpg')
             
     #? 4
     # Update facial registration status of the user

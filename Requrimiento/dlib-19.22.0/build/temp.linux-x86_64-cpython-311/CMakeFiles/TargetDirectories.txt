@@ -1,0 +1,8 @@
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/_dlib_pybind11.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/edit_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/CMakeFiles/rebuild_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/pybind11_build/CMakeFiles/edit_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/pybind11_build/CMakeFiles/rebuild_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/CMakeFiles/dlib.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/CMakeFiles/edit_cache.dir
+/home/andy/Documentos/softminds/safuami/appBackend/Requrimiento/dlib-19.22.0/build/temp.linux-x86_64-cpython-311/dlib_build/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,4 @@
+cmake
 opencv-python
 pandas
 torch
@@ -20,6 +21,5 @@ pydantic
 bcrypt
 passlib[bcrypt]
 python-jose[cryptography]
-dlib==19.22
 face-recognition
 

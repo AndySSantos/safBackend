@@ -1,0 +1,3 @@
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libjpeg/build/CMakeFiles/rebuild_cache.dir
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libjpeg/build/CMakeFiles/edit_cache.dir
+/home/davis/source/dlib/dlib/cmake_utils/test_for_libjpeg/build/CMakeFiles/libjpeg_test.dir
